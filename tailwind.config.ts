@@ -1,18 +1,12 @@
 import type {Config} from "tailwindcss";
 
 const config: Config = {
-    content: [
-        "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-        "./components/**/*.{js,ts,jsx,tsx,mdx}",
-        "./app/**/*.{js,ts,jsx,tsx,mdx}",
-        "./sanity/**/*.{js,ts,jsx,tsx,mdx}",
-    ],
     theme: {
             extend: {
               colors: {
                 primary: {
                     "100": "#b5e2d1",
-                    DEFAULT: "#E6267B",
+                    DEFAULT: "var(--color-primary)",
                 },
                 secondary: "#FBE843",
                 black: {
@@ -25,9 +19,9 @@ const config: Config = {
                     "100": "#F7F7F7",
                     DEFAULT: "#FFFFFF",
                 },
-            },
-            fontFamily: {
-                "work-sans": ["var(--font-work-sans)"],
+                bg: {
+                    "white": "var(--color-bg-white)",
+                },
             },
             borderRadius: {
                 lg: "var(--radius)",

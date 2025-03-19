@@ -1,0 +1,1 @@
+export const navLinks = ['Inicio', 'Explorar Spots', 'Poné tu Party Spot', 'Sobre nosotros']
