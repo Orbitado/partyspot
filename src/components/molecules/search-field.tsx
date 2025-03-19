@@ -9,9 +9,14 @@ export default function SearchField() {
   const [date, setDate] = useState("En cualquier momento");
 
   return (
-    <form className="flex w-full items-center rounded-lg border border-gray-100 bg-white p-1 text-black shadow-md">
+    <form
+      className="flex w-full items-center rounded-lg border border-gray-100 bg-white p-1 text-black shadow-md"
+      role="search"
+      aria-label="Búsqueda de lugares"
+    >
       <div className="flex flex-grow divide-x divide-gray-300">
         <SearchInput
+          id="activity-search"
           label="¿Qué estás planeando?"
           placeholder="Busca una actividad"
           value={activity}
@@ -20,6 +25,7 @@ export default function SearchField() {
         />
 
         <SearchInput
+          id="location-search"
           label="¿Dónde?"
           placeholder="Ingresa un lugar"
           value={location}
@@ -28,6 +34,7 @@ export default function SearchField() {
         />
 
         <SearchInput
+          id="date-search"
           label="¿Cuándo?"
           placeholder="Selecciona una fecha"
           value={date}
@@ -37,10 +44,11 @@ export default function SearchField() {
       </div>
 
       <button
-        aria-label="Buscar"
+        type="submit"
+        aria-label="Buscar lugares"
         className="bg-primary hover:bg-primary/90 mx-4 flex items-center gap-2 rounded-md px-5 py-3 shadow-sm transition-all duration-200"
       >
-        <Search className="h-4 w-4 text-white" />
+        <Search className="h-4 w-4 text-white" aria-hidden="true" />
         <span className="text-md font-semibold text-white">Buscar</span>
       </button>
     </form>

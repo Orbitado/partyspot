@@ -9,3 +9,8 @@ export interface BackgroundItem {
   url: string;
   name: string;
 }
+
+export interface CelebrationOption {
+  value: string;
+  label: string;
+}

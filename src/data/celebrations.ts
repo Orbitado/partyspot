@@ -1,6 +1,6 @@
-import { Option } from "../components/atoms/select";
+import { CelebrationOption } from "@/src/types";
 
-export const celebrationOptions: Option[] = [
+export const celebrationOptions: CelebrationOption[] = [
   { value: "wedding", label: "Boda" },
   { value: "birthday", label: "Cumpleaños" },
   { value: "anniversary", label: "Aniversario" },
