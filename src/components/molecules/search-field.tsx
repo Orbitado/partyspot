@@ -38,9 +38,10 @@ export default function SearchField() {
 
       <button
         aria-label="Buscar"
-        className="mx-4 rounded-full bg-gray-100 p-2 shadow-sm transition-all duration-200 hover:bg-gray-200 hover:shadow-md"
+        className="bg-primary hover:bg-primary/90 mx-4 flex items-center gap-2 rounded-md px-5 py-3 shadow-sm transition-all duration-200"
       >
-        <Search />
+        <Search className="h-4 w-4 text-white" />
+        <span className="text-md font-semibold text-white">Buscar</span>
       </button>
     </form>
   );

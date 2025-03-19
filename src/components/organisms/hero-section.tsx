@@ -14,7 +14,7 @@ export default function HeroSection() {
             lugar de tus sueños.
           </span>
         </h1>
-        <div className="w-7xl">
+        <div className="w-6xl">
           <SearchField />
         </div>
       </main>

@@ -19,7 +19,7 @@ export default function SearchInput({
 }: SearchInputProps) {
   return (
     <div className="flex-1 items-start justify-start px-7 py-3 text-left">
-      <label className="text-left text-sm font-medium text-black">
+      <label className="text-left text-sm font-medium text-gray-600">
         {label}
       </label>
       <div className="flex">

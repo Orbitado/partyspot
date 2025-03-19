@@ -3,7 +3,9 @@ import { icons } from "@/src/data/icons";
 import { useState } from "react";
 
 export default function HeroIconList() {
-  const [activeIcon, setActiveIcon] = useState<number>(0);
+  const [icon, setIcon] = useState({
+    current: 0
+  });
 
   return (
     <ul className="m-0 flex items-center justify-center gap-6">
@@ -13,11 +15,15 @@ export default function HeroIconList() {
             title={label}
             type="button"
             className="cursor-pointer"
-            onClick={() => setActiveIcon(index)}
+            onClick={() =>
+              setIcon({
+                current: index
+              })
+            }
           >
             <IconComponent
               className={`size-9 opacity-50 duration-300 ease-in-out ${
-                activeIcon === index ? "scale-110 opacity-100" : "opacity-50"
+                icon.current === index ? "scale-110 opacity-100" : "opacity-50"
               }`}
             />
           </button>
