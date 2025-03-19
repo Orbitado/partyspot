@@ -16,7 +16,7 @@ export default function HeroIconList() {
             onClick={() => setActiveIcon(index)}
           >
             <IconComponent
-              className={`size-10 opacity-50 duration-300 ease-in-out ${
+              className={`size-9 opacity-50 duration-300 ease-in-out ${
                 activeIcon === index ? "scale-110 opacity-100" : "opacity-50"
               }`}
             />

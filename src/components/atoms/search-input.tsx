@@ -7,9 +7,6 @@ interface SearchInputProps
   icon?: ReactNode;
   onChange?: (value: string) => void;
   value?: string;
-  className?: string;
-  labelClassName?: string;
-  inputClassName?: string;
 }
 
 export default function SearchInput({
@@ -18,21 +15,20 @@ export default function SearchInput({
   icon,
   onChange,
   value,
-  className = "flex-1 px-12 py-4",
-  labelClassName = "text-md font-bold text-black",
-  inputClassName = "w-full border-none focus:outline-none text-sm bg-transparent text-black",
   ...rest
 }: SearchInputProps) {
   return (
-    <div className={className}>
-      <label className={labelClassName}>{label}</label>
-      <div className="flex items-center">
+    <div className="flex-1 items-start justify-start px-7 py-3 text-left">
+      <label className="text-left text-sm font-medium text-black">
+        {label}
+      </label>
+      <div className="flex">
         <input
           type="text"
           placeholder={placeholder}
           value={value}
           onChange={(e) => onChange?.(e.target.value)}
-          className={inputClassName}
+          className="text-md w-full border-none bg-transparent font-bold text-black placeholder:font-normal focus:outline-none"
           {...rest}
         />
         {icon}

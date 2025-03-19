@@ -6,7 +6,7 @@ import SearchField from "@/src/components/molecules/search-field";
 export default function HeroSection() {
   return (
     <BackgroundPageContainer>
-      <main className="row-span-1 row-start-2 flex flex-col items-center justify-center gap-4 space-y-4">
+      <main className="row-span-1 row-start-2 mx-auto flex max-w-7xl flex-col items-center justify-center gap-4 space-y-8">
         <HeroIconList />
         <h1 className="max-w-4xl text-center text-7xl font-bold">
           <span>
@@ -14,7 +14,9 @@ export default function HeroSection() {
             lugar de tus sueños.
           </span>
         </h1>
-        <SearchField />
+        <div className="w-7xl">
+          <SearchField />
+        </div>
       </main>
     </BackgroundPageContainer>
   );
