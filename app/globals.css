@@ -6,13 +6,13 @@
 }
 
 @theme inline {
-  --color-primary: #E6267B;
-  --color-bg-white: #F7F7F7;
-  --color-gray:#CBD5E1;
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-primary: #E6267B; /*color primary*/
+  --color-bg-white: #F7F7F7; /*color background white*/
+  --color-gray:#CBD5E1; /*color gray*/
+  --color-background: var(--background); /*color background*/
+  --color-foreground: var(--foreground); /*color foreground*/
+  --font-sans: var(--font-geist-sans); /*font sans*/
+  --font-mono: var(--font-geist-mono); /*font mono*/
 }
 
 @media (prefers-color-scheme: dark) {
