@@ -1,28 +1,28 @@
 "use client";
 import { icons } from "@/src/data/icons";
+import { useState } from "react";
 
-interface HeroIconListProps {
-  onIconClick?: (index: number) => void;
-}
+export default function HeroIconList() {
+  const [activeIcon, setActiveIcon] = useState<number>(0);
 
-export default function HeroIconList({ onIconClick }: HeroIconListProps) {
   return (
-    <div className="bg-red-500">
-      <ul className="bg-blue-500">
-        {icons.map(({ icon: IconComponent, label }, index) => (
-          <li key={index} aria-label={label}>
-            <button
-              className="bg-green-500"
-              title={label}
-              onClick={() => {
-                if (onIconClick) onIconClick(index);
-              }}
-            >
-              <IconComponent className="bg-yellow-500" />
-            </button>
-          </li>
-        ))}
-      </ul>
-    </div>
+    <ul className="flex gap-6 justify-center items-center m-0">
+      {icons.map(({ icon: IconComponent, label }, index) => (
+        <li key={index} aria-label={label}>
+          <button
+            title={label}
+            type="button"
+            className="cursor-pointer"
+            onClick={() => setActiveIcon(index)}
+          >
+            <IconComponent
+              className={`size-10 opacity-50 ease-in-out duration-300 ${
+                activeIcon === index ? "opacity-100 scale-110" : "opacity-50"
+              }`}
+            />
+          </button>
+        </li>
+      ))}
+    </ul>
   );
 }

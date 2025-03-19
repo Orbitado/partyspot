@@ -1,0 +1,23 @@
+echo "🔍 Starting pre-commit checks..."
+
+# Check if there are staged changes that need verification
+if git diff --cached --quiet; then
+  echo "✅ No changes to verify. Commit allowed."
+  exit 0
+fi
+
+# Run lint-staged to format and fix errors
+echo "🧹 Running lint-staged (ESLint + Prettier)..."
+npx lint-staged || {
+  echo "❌ lint-staged check failed. Please fix the indicated errors."
+  exit 1
+}
+
+# # # Check that tests pass
+# echo "🧪 Running tests..."
+# npm test || {
+#   echo "❌ Tests failed. Fix the tests before committing."
+#   exit 1
+# }
+
+echo "✅ All checks passed. Proceeding with commit."
