@@ -1,12 +1,13 @@
+import HeroSection from "@/src/components/organisms/hero-section";
 import Navbar from "@/src/components/organisms/navbar";
 import type { NextPage } from "next";
 
-
 const Home: NextPage = () => {
   return (
-    <div className="bg-white-100">
+    <main id="main-content">
       <Navbar />
-    </div>
+      <HeroSection />
+    </main>
   );
 };
 

@@ -1,0 +1,33 @@
+# Build outputs
+dist/
+build/
+.next/
+
+# Node modules
+node_modules/
+
+# Cache
+.cache/
+
+# Coverage reports
+coverage/
+
+# Logs
+logs/
+*.log
+
+# Other common excludes
+.git/
+.DS_Store 
+.prettierignore
+eslint.config.mjs
+postcss.config.mjs
+prettier.config.mjs
+package-lock.json
+package.json
+next.config.mjs
+postcss.config.mjs
+tsconfig.json
+tsconfig.node.json
+
+
