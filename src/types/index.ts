@@ -8,4 +8,4 @@ export interface IconItem {
 export interface BackgroundItem {
   url: string;
   name: string;
-} 
+}

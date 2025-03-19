@@ -5,5 +5,5 @@ export const icons: IconItem[] = [
   { icon: Heart, label: "Love" },
   { icon: Cake, label: "Celebration" },
   { icon: House, label: "Home" },
-  { icon: GraduationCap, label: "Education" },
-]; 
+  { icon: GraduationCap, label: "Education" }
+];

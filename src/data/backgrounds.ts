@@ -17,4 +17,4 @@ export const backgrounds: BackgroundItem[] = [
     url: "https://images.unsplash.com/photo-1527529482837-4698179dc6ce?q=80&w=2070",
     name: "Education"
   }
-]; 
+];

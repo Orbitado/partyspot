@@ -6,7 +6,7 @@ export default function HeroIconList() {
   const [activeIcon, setActiveIcon] = useState<number>(0);
 
   return (
-    <ul className="flex gap-6 justify-center items-center m-0">
+    <ul className="m-0 flex items-center justify-center gap-6">
       {icons.map(({ icon: IconComponent, label }, index) => (
         <li key={index} aria-label={label}>
           <button
@@ -16,8 +16,8 @@ export default function HeroIconList() {
             onClick={() => setActiveIcon(index)}
           >
             <IconComponent
-              className={`size-10 opacity-50 ease-in-out duration-300 ${
-                activeIcon === index ? "opacity-100 scale-110" : "opacity-50"
+              className={`size-10 opacity-50 duration-300 ease-in-out ${
+                activeIcon === index ? "scale-110 opacity-100" : "opacity-50"
               }`}
             />
           </button>

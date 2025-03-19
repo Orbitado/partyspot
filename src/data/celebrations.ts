@@ -7,5 +7,5 @@ export const celebrationOptions: Option[] = [
   { value: "graduation", label: "Graduación" },
   { value: "corporate", label: "Evento Corporativo" },
   { value: "baptism", label: "Bautizo" },
-  { value: "other", label: "Otro" },
+  { value: "other", label: "Otro" }
 ];
