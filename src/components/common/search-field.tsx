@@ -2,7 +2,7 @@
 "use client";
 import { ChevronDown, Calendar, Search, MapPin } from "lucide-react";
 import { useState } from "react";
-import SearchInput from "../atoms/search-input";
+import SearchInput from "./search-input";
 
 export default function SearchField() {
   const [activity, setActivity] = useState("Solo estoy viendo");

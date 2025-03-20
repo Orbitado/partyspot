@@ -1,7 +1,7 @@
-import HeroIconList from "@/src/components/molecules/hero-icon-list";
-import BackgroundPageContainer from "@/src/components/atoms/background-page-container";
-import SearchField from "@/src/components/molecules/search-field";
-import HeroText from "@/src/components/atoms/hero-text";
+import HeroIconList from "@/src/components/hero-section/hero-icon-list";
+import BackgroundPageContainer from "@/src/components/common/background-page-container";
+import SearchField from "@/src/components/common/search-field";
+import HeroText from "@/src/components/common/hero-text";
 
 export default function HeroSection() {
   return (

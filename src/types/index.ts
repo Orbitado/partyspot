@@ -22,3 +22,14 @@ export interface HeroSectionByIconSelected {
   icon: LucideIcon;
   backgroundUrl: string;
 }
+
+export interface ImageItem {
+  logo: {
+    icon: string;
+    text: string;
+  };
+  icons: {
+    menu: LucideIcon;
+    profile: LucideIcon;
+  };
+}

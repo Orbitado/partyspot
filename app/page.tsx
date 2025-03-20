@@ -1,5 +1,5 @@
-import HeroSection from "@/src/components/organisms/hero-section";
-import Navbar from "@/src/components/organisms/navbar";
+import HeroSection from "@/src/components/hero-section";
+import Navbar from "@/src/components/navbar/navbar";
 import type { NextPage } from "next";
 
 const Home: NextPage = () => {

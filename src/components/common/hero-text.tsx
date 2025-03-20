@@ -1,6 +1,6 @@
 "use client";
 import { useHeroStore } from "@/src/providers/hero-store-provider";
-import WaveUnderline from "@/src/components/atoms/wave-underline";
+import WaveUnderline from "@/src/components/common/wave-underline";
 
 export default function HeroText() {
   const { highlight, text } = useHeroStore((state) => state);
