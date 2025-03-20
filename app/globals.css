@@ -3,7 +3,7 @@
 :root {
   --background: #0a0a0a;
   --foreground: #ededed;
-  --primary: #E6267B;
+  --primary: #e6267b;
 }
 
 @theme inline {
@@ -22,7 +22,7 @@ body {
 
 /* Navbar */
 .navbar-link {
-  @apply px-4 py-2 rounded-lg font-bold text-black text-sm;
+  @apply rounded-lg px-4 py-2 text-sm font-bold text-black;
 }
 
 .navbar-link:hover {
