@@ -1,4 +1,5 @@
 import { SVGProps } from "react";
+import { LucideIcon } from "lucide-react";
 
 export interface IconItem {
   icon: React.ComponentType<SVGProps<SVGSVGElement>>;
@@ -13,4 +14,11 @@ export interface BackgroundItem {
 export interface CelebrationOption {
   value: string;
   label: string;
+}
+
+export interface HeroSectionByIconSelected {
+  highlight: string;
+  text: string;
+  icon: LucideIcon;
+  backgroundUrl: string;
 }

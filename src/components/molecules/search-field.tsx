@@ -1,3 +1,4 @@
+// TODO: Refactor this component with zod and react-hook-form then remove the use client
 "use client";
 import { ChevronDown, Calendar, Search, MapPin } from "lucide-react";
 import { useState } from "react";
