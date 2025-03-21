@@ -3,6 +3,7 @@
 :root {
   --foreground: #ededed;
   --primary: #e6267b;
+  --secondary: #0B003D;
 }
 
 @theme inline {
@@ -11,6 +12,7 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
 }
 
 /* Navbar */
