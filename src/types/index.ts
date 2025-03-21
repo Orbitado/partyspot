@@ -33,3 +33,15 @@ export interface ImageItem {
     profile: LucideIcon;
   };
 }
+
+export interface Spot {
+  id: string;
+  title: string;
+  price: number;
+  rating: number;
+  reviewCount: number;
+  imageUrl: string;
+  location: string;
+  availability: string;
+  href: string;
+}
