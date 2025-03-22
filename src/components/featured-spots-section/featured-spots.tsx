@@ -3,7 +3,7 @@ import FeaturedSpotsCard from "./featured-spotscard";
 import { spots } from "@/src/data/spots";
 import { ChevronRightIcon } from "lucide-react";
 
-const FeaturedSpotsSection = () => {
+export default function FeaturedSpotsSection() {
   return (
     <section className="mb-12 sm:mb-16 md:mb-20">
       <article className="container mx-auto px-4">
@@ -24,7 +24,7 @@ const FeaturedSpotsSection = () => {
       </article>
     </section>
   );
-};
+}
 
 const FeaturedSpots = () => {
   return (
@@ -35,5 +35,3 @@ const FeaturedSpots = () => {
     </section>
   );
 };
-
-export default FeaturedSpotsSection;
