@@ -1,17 +1,48 @@
+"use client";
 import { FeatureItemProps } from "@/src/data/feature-items";
+import { useSelectionStore } from "@/src/providers/selection-store-provider";
 
 export default function FeatureItem({
   title,
   description,
-  icon
-}: FeatureItemProps) {
+  icon,
+  id
+}: FeatureItemProps & { id: string }) {
+  const selectedId = useSelectionStore((state) => state.selectedId);
+  const selectItem = useSelectionStore((state) => state.selectItem);
+  const isSelected = selectedId === id;
+
+  const handleClick = () => {
+    selectItem(id);
+  };
+
   return (
-    <div className="flex items-start">
-      <div className="bg-primary/10 mr-5 rounded-xl p-3">{icon}</div>
+    <button
+      className={`relative flex cursor-pointer items-start rounded-lg p-4 text-start transition-all duration-300 ${
+        isSelected && "scale-105 bg-gray-100 text-white"
+      }`}
+      onClick={handleClick}
+      tabIndex={0}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          handleClick();
+        }
+      }}
+    >
+      <div className="mr-5 rounded-xl p-3 transition-all duration-300">
+        {icon}
+      </div>
       <div>
-        <h4 className="text-secondary mb-2 text-xl font-bold">{title}</h4>
+        <h4
+          className={`mb-2 text-xl font-bold transition-all duration-300 ${
+            isSelected ? "text-primary" : "text-secondary"
+          }`}
+        >
+          {title}
+        </h4>
         <p className="leading-relaxed text-gray-700">{description}</p>
       </div>
-    </div>
+    </button>
   );
 }
