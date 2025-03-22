@@ -1,6 +1,6 @@
 "use client";
 import { FeatureItemProps } from "@/src/data/feature-items";
-import { useSelectionStore } from "@/src/providers/selection-store-provider";
+import { useStore } from "@/src/store";
 
 export default function FeatureItem({
   title,
@@ -8,8 +8,8 @@ export default function FeatureItem({
   icon,
   id
 }: FeatureItemProps & { id: string }) {
-  const selectedId = useSelectionStore((state) => state.selectedId);
-  const selectItem = useSelectionStore((state) => state.selectItem);
+  const selectedId = useStore((state) => state.selectedId);
+  const selectItem = useStore((state) => state.selectItem);
   const isSelected = selectedId === id;
 
   const handleClick = () => {

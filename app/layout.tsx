@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import { Gabarito } from "next/font/google";
 import "./globals.css";
 
-import { HeroStoreProvider } from "@/src/providers/hero-store-provider";
-
 const gabarito = Gabarito({
   variable: "--font-gabarito",
   subsets: ["latin"]
@@ -26,9 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body className={`${gabarito.className} antialiased`}>
-        <HeroStoreProvider>{children}</HeroStoreProvider>
-      </body>
+      <body className={`${gabarito.className} antialiased`}>{children}</body>
     </html>
   );
 }

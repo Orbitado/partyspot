@@ -1,5 +1,5 @@
 "use client";
-import { useHeroStore } from "@/src/providers/hero-store-provider";
+import { useStore } from "@/src/store";
 
 interface BackgroundPageContainerProps {
   children: React.ReactNode;
@@ -8,7 +8,7 @@ interface BackgroundPageContainerProps {
 export default function BackgroundPageContainer({
   children
 }: BackgroundPageContainerProps) {
-  const { backgroundUrl } = useHeroStore((state) => state);
+  const backgroundUrl = useStore((state) => state.backgroundUrl);
 
   return (
     <div
