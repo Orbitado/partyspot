@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
+import { Gabarito } from "next/font/google";
 import "./globals.css";
 
 import { HeroStoreProvider } from "@/src/providers/hero-store-provider";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const gabarito = Gabarito({
+  variable: "--font-gabarito",
   subsets: ["latin"]
 });
 
@@ -26,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body className={`${geistSans.variable} antialiased`}>
+      <body className={`${gabarito.className} antialiased`}>
         <HeroStoreProvider>{children}</HeroStoreProvider>
       </body>
     </html>
