@@ -6,7 +6,7 @@ export default function FeatureList() {
   return (
     <div className="flex flex-col items-center justify-evenly gap-8">
       {featureItems.map((item) => (
-        <div key={item.title} className="group">
+        <div key={item.id} className="group">
           <FeatureItem
             {...item}
             id={item.id}

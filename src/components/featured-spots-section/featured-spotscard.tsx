@@ -1,5 +1,4 @@
-/* eslint-disable @next/next/no-img-element */
-// import Image from "next/image";
+import Image from "next/image";
 import Link from "next/link";
 import { Star, Share, Heart, MapPin } from "lucide-react";
 
@@ -10,9 +9,9 @@ export interface CardProps {
   rating?: number;
   reviewCount?: number;
   imageUrl: string;
+  href: string;
   location: string;
   availability: string;
-  href: string;
 }
 
 export default function FeaturedSpotsCard({
@@ -20,10 +19,10 @@ export default function FeaturedSpotsCard({
   price,
   rating,
   reviewCount,
-  imageUrl,
   location,
   availability,
-  href
+  href,
+  imageUrl
 }: CardProps) {
   const hasRating = rating && rating > 0;
   const ratingValue = hasRating && rating.toFixed(1);
@@ -42,14 +41,15 @@ export default function FeaturedSpotsCard({
       >
         {/* Image container with overlay */}
         <div className="relative h-[280px] w-full overflow-hidden sm:h-[350px] md:h-[400px] lg:h-[450px]">
-          {/* // TODO: Change this for NextJs Image */}
-          <img
+          <Image
             src={imageUrl}
             alt={`Imagen de ${title} - Espacio para eventos`}
             sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
+            width={1000}
+            height={1000}
             className="aspect-[3/4] object-cover object-center transition-transform duration-500 group-hover:scale-105 sm:aspect-9/16"
             itemProp="image"
-            loading="lazy"
+            priority
           />
           <div
             className="absolute inset-0 bg-gradient-to-b from-transparent to-black/80"
