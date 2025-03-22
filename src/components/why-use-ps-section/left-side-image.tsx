@@ -1,30 +1,21 @@
+"use client";
 import Image from "next/image";
-
-const IMAGE_WIDTH = 800;
-const IMAGE_HEIGHT = 800;
-
-// const faqSection = [
-//   {
-//     src: "/images/girl-connecting.webp"
-//   },
-//   {
-//     src: "/images/good-budgets.webp"
-//   },
-//   {
-//     src: "/images/secure-payments.webp"
-//   }
-// ];
+import { useStore } from "@/src/store";
 
 export default function LeftSideImage() {
+  const selectedBackgroundUrl = useStore(
+    (state) => state.selectedBackgroundUrl
+  );
+
   return (
-    <div className="hidden md:block">
+    <div className="relative h-full w-full">
       <Image
-        src="/images/girl-connecting.webp"
+        src={selectedBackgroundUrl || "/images/girl-connecting.webp"}
         alt="PartySpot"
-        width={IMAGE_WIDTH}
-        height={IMAGE_HEIGHT}
+        fill
+        className="object-cover"
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-        loading="lazy"
+        priority
       />
     </div>
   );

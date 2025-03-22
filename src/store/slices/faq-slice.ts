@@ -1,18 +1,23 @@
 export interface FaqSlice {
-  selectedId: string | null;
+  selectedId: number;
+  selectedBackgroundUrl: string;
 
-  selectItem: (id: string) => void;
+  selectBackgroundUrl: (backgroundUrl: string) => void;
+  selectItem: (id: number) => void;
   clearSelection: () => void;
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const createFaqSlice = (set: any) => ({
-  selectedId: null,
+  selectedId: 1,
+  selectedBackgroundUrl: "/images/girl-connecting.webp",
 
-  selectItem: (id: string) =>
+  selectBackgroundUrl: (backgroundUrl: string) =>
+    set({ selectedBackgroundUrl: backgroundUrl }),
+  selectItem: (id: number) =>
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     set((state: any) => ({
-      selectedId: state.selectedId === id ? null : id
+      selectedId: state.selectedId === id ? 1 : id
     })),
-  clearSelection: () => set({ selectedId: null })
+  clearSelection: () => set({ selectedId: 1 })
 });

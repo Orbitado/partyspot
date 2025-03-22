@@ -6,20 +6,23 @@ export default function FeatureItem({
   title,
   description,
   icon,
-  id
-}: FeatureItemProps & { id: string }) {
+  id,
+  backgroundUrl
+}: FeatureItemProps) {
   const selectedId = useStore((state) => state.selectedId);
+  const selectBackgroundUrl = useStore((state) => state.selectBackgroundUrl);
   const selectItem = useStore((state) => state.selectItem);
   const isSelected = selectedId === id;
 
   const handleClick = () => {
     selectItem(id);
+    selectBackgroundUrl(backgroundUrl);
   };
 
   return (
     <button
-      className={`relative flex cursor-pointer items-start rounded-lg p-4 text-start transition-all duration-300 ${
-        isSelected && "scale-105 bg-gray-100 text-white"
+      className={`relative flex w-full cursor-pointer items-start rounded-lg p-4 text-start transition-all duration-300 ${
+        isSelected ? "scale-105 bg-gray-100" : ""
       }`}
       onClick={handleClick}
       tabIndex={0}
