@@ -33,7 +33,7 @@ export default function FeatureItem({
         }
       }}
     >
-      <div className="mr-5 rounded-xl p-3 transition-all duration-300">
+      <div className="bg-primary/20 mr-5 rounded-xl p-3 transition-all duration-300">
         {icon}
       </div>
       <div>
