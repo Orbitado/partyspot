@@ -39,7 +39,7 @@ export default function ContentImageGrid({
       <div
         className={`flex flex-col justify-center p-8 md:p-12 ${contentClass}`}
       >
-        <div className="max-w-xl space-y-8">{children}</div>
+        <div className="mx-auto max-w-xl">{children}</div>
       </div>
 
       {/* Imagen */}

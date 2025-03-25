@@ -39,28 +39,31 @@ export default function BecomeHostSection() {
             imageAlt="Persona satisfecha generando ingresos como anfitrión en PartySpot"
             imagePosition="right"
           >
-            <div>
-              <h3 className="text-2xl font-bold md:text-3xl">
-                Tu espacio, tu fuente de ingresos
-              </h3>
-              <p className="mt-4 text-lg text-gray-600">
-                Publicá tu espacio hoy y conseguí ventas todos los meses
-              </p>
-            </div>
+            <div className="flex flex-col justify-center space-y-4 text-center">
+              <div className="flex flex-col justify-center text-left">
+                <h3 className="text-2xl font-bold md:text-3xl">
+                  Tu espacio, tu fuente de ingresos
+                </h3>
+                <p className="text-lg text-gray-600">
+                  Publicá tu espacio hoy y conseguí ventas todos los meses
+                </p>
+              </div>
 
-            <ul className="space-y-4" aria-label="Beneficios de ser anfitrión">
-              {features.map((feature) => (
-                <li key={feature.title}>
-                  <FeatureItem
-                    title={feature.title}
-                    description={feature.description}
-                    icon={feature.icon}
-                  />
-                </li>
-              ))}
-            </ul>
+              <ul
+                className="space-y-4 text-left"
+                aria-label="Beneficios de ser anfitrión"
+              >
+                {features.map((feature) => (
+                  <li key={feature.title}>
+                    <FeatureItem
+                      title={feature.title}
+                      description={feature.description}
+                      icon={feature.icon}
+                    />
+                  </li>
+                ))}
+              </ul>
 
-            <div className="pt-4">
               <LinkButton
                 href="/become-host"
                 size="md"
@@ -68,8 +71,12 @@ export default function BecomeHostSection() {
               >
                 Publicar mi espacio
               </LinkButton>
-              <p className="mt-4 text-sm text-gray-500">
-                Sin compromisos a largo plazo. Comprobá los resultados.
+              <p className="text-sm text-gray-500">
+                Sin compromisos a largo plazo. Comprobá los resultados{" "}
+                <span className="font-bold text-pink-600">
+                  en menos de 15 días
+                </span>
+                .
               </p>
             </div>
           </ContentImageGrid>
