@@ -48,16 +48,17 @@ export default function BecomeHostSection() {
               </p>
             </div>
 
-            <div role="list" aria-label="Beneficios de ser anfitrión">
+            <ul className="space-y-4" aria-label="Beneficios de ser anfitrión">
               {features.map((feature) => (
-                <FeatureItem
-                  key={feature.title}
-                  title={feature.title}
-                  description={feature.description}
-                  icon={feature.icon}
-                />
+                <li key={feature.title}>
+                  <FeatureItem
+                    title={feature.title}
+                    description={feature.description}
+                    icon={feature.icon}
+                  />
+                </li>
               ))}
-            </div>
+            </ul>
 
             <div className="pt-4">
               <LinkButton
