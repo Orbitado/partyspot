@@ -1,11 +1,11 @@
 import Image from "next/image";
-import FaqCard from "./section-card";
+import FaqCard from "./faq-card";
 
 export default function WhyUsePartySpot() {
   return (
-    <section className="mb-12 sm:mb-16 md:mb-20">
-      <article className="container mx-auto px-4">
-        <h2 className="text-secondary mb-12 flex flex-col items-center justify-center text-3xl font-bold sm:flex-row sm:gap-4 sm:text-4xl md:text-6xl">
+    <section className="text-secondary mb-12 sm:mb-16 md:mb-20">
+      <article className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <h2 className="mb-12 flex flex-col items-center justify-center text-3xl font-bold sm:flex-row sm:gap-4 sm:text-4xl md:text-6xl">
           <span className="pb-1">¿Por qué usar</span>
           <div className="flex items-center">
             <Image

@@ -13,7 +13,7 @@ export default function BackgroundCard({
 }: BackgroundCardProps) {
   return (
     <div
-      className={`overflow-hidden rounded-2xl bg-white shadow-xl ${hoverEffect ? "transition-all hover:shadow-2xl" : ""} ${className} `}
+      className={`mx-auto max-w-7xl overflow-hidden rounded-2xl bg-white shadow-xl ${hoverEffect && "transition-all hover:shadow-2xl"} ${className}`}
     >
       {children}
     </div>
