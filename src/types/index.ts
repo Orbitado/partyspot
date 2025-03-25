@@ -1,6 +1,18 @@
 import { SVGProps } from "react";
 import { LucideIcon } from "lucide-react";
 
+export interface NavLink {
+  id: string;
+  label: string;
+  href: string;
+}
+
+export interface NavbarProps {
+  className?: string;
+  onMenuToggle?: () => void;
+  onProfileClick?: () => void;
+}
+
 export interface IconItem {
   icon: React.ComponentType<SVGProps<SVGSVGElement>>;
   label: string;

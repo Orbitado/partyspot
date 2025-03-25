@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { images } from "@/src/data/images";
-import type { NavbarProps } from "@/src/types/navigation";
+import type { NavbarProps } from "@/src/types";
 import NavLinks from "./nav-links";
 import UserActions from "./user-actions";
 

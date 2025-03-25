@@ -1,16 +1,14 @@
 "use client";
-import { useHeroStore } from "@/src/providers/hero-store-provider";
+import { useStore } from "@/src/store";
 import { heroSectionByIconSelected } from "@/src/data/hero-section-by-icon-selected";
 
 export default function HeroIconList() {
-  const {
-    currentIcon,
-    setCurrentIcon,
-    setBackgroundUrl,
-    setText,
-    setHighlight,
-    setIcon
-  } = useHeroStore((state) => state);
+  const currentIcon = useStore((state) => state.currentIcon);
+  const setCurrentIcon = useStore((state) => state.setCurrentIcon);
+  const setBackgroundUrl = useStore((state) => state.setBackgroundUrl);
+  const setText = useStore((state) => state.setText);
+  const setHighlight = useStore((state) => state.setHighlight);
+  const setIcon = useStore((state) => state.setIcon);
 
   const handleIconClick = (index: number) => {
     setCurrentIcon(index);
