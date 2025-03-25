@@ -1,6 +1,6 @@
 "use client";
 import { featureItems } from "@/src/data/feature-items";
-import FeatureItem from "./feature-item";
+import FeatureItem from "./extended-feature-item";
 
 export default function FeatureList() {
   return (

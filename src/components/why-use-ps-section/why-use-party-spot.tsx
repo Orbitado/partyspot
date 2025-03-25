@@ -1,5 +1,5 @@
 import Image from "next/image";
-import FaqCard from "./faq-card";
+import FaqCard from "./section-card";
 
 export default function WhyUsePartySpot() {
   return (
