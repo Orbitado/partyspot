@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Gabarito } from "next/font/google";
 import "./globals.css";
+import { Footer } from "@/components/footer/footer";
 
 const gabarito = Gabarito({
   variable: "--font-gabarito",
@@ -24,7 +25,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body className={`${gabarito.className} antialiased`}>{children}</body>
+      <body
+        className={`${gabarito.className} flex min-h-screen flex-col antialiased`}
+      >
+        <main className="flex-grow">{children}</main>
+        <Footer />
+      </body>
     </html>
   );
 }
