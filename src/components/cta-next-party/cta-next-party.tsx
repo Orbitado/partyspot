@@ -12,8 +12,3 @@ const NextParty = () => {
 };
 
 export default NextParty;
-
-{
-  /*
-   */
-}
