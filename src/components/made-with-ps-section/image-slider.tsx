@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 
 interface ImageType {
@@ -31,6 +29,7 @@ export default function ImageSlider({ images, direction }: ImageSliderProps) {
             fill
             className="object-cover transition-transform duration-300 group-hover:scale-110"
             sizes="(max-width: 640px) 288px, 320px"
+            loading="lazy"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
           <div className="absolute right-0 bottom-0 left-0 p-4 text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">

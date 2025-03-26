@@ -26,6 +26,7 @@ export default function SectionHeader({
         width={400}
         height={400}
         className="h-auto w-52 sm:w-64 md:w-72"
+        priority
       />
     </Tag>
   );
