@@ -13,7 +13,7 @@ const Navbar: React.FC<NavbarProps> = ({
 }) => {
   return (
     <nav
-      className={`fixed flex h-20 w-full items-center justify-between bg-white px-4 shadow-sm lg:px-24 ${className}`}
+      className={`fixed z-50 flex h-20 w-full items-center justify-between bg-white px-4 shadow-sm lg:px-24 ${className}`}
       role="navigation"
       aria-label="Main navigation"
     >

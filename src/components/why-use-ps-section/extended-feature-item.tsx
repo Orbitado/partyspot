@@ -10,9 +10,9 @@ export default function FeatureItem({
   id,
   backgroundUrl
 }: FeatureItemProps) {
-  const selectedId = useStore((state) => state.selectedId);
-  const selectBackgroundUrl = useStore((state) => state.selectBackgroundUrl);
-  const selectItem = useStore((state) => state.selectItem);
+  const { selectedId, selectBackgroundUrl, selectItem } = useStore(
+    (state) => state
+  ); //checkear funcionamiento
   const isSelected = selectedId === id;
 
   const handleClick = () => {
