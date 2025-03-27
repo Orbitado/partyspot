@@ -1,29 +1,12 @@
 "use client";
 
 import React from "react";
-import { PartyOptionButton } from "./party-option-button";
-import { partyOptions } from "@/src/data/party-options";
-import { usePartySelection } from "@/src/hooks/use-party-selection";
+import ImageContainer from "./image-container";
+import { PartyButtons } from "./party-buttons";
 
 export const PartySelector = () => {
-  const { selectedParty, selectedOption, handlePartySelect } =
-    usePartySelection();
-
-  const partyButtons = (
-    <div className="grid grid-cols-2 gap-2 sm:flex sm:flex-wrap">
-      {partyOptions.map((option) => (
-        <PartyOptionButton
-          key={option.id}
-          option={option}
-          isSelected={selectedParty === option.id}
-          onClick={handlePartySelect}
-        />
-      ))}
-    </div>
-  );
-
   const titleSection = (
-    <div className="rounded-lg bg-gradient-to-r from-[#E6267B] to-[#E3004C] p-4">
+    <div className="from-primary/90 to-primary rounded-lg bg-gradient-to-r p-4">
       <h1 className="text-lg font-bold text-white sm:text-3xl md:text-4xl">
         ¿Cuál será tu próxima fiesta?
       </h1>
@@ -35,28 +18,22 @@ export const PartySelector = () => {
       <h3 className="text-secondary text-lg font-medium">
         Reserva un lugar único para tu evento.
       </h3>
-      {partyButtons}
+      <PartyButtons />
     </div>
   );
 
   return (
-    <div className="relative flex flex-col sm:block">
+    <div className="flex min-h-[calc(100vh-4rem)] w-full flex-col items-center justify-center">
       {/* Mobile view (hidden on sm and up) */}
-      <div className="flex flex-col gap-5 sm:hidden">
+      <div className="flex w-full flex-col gap-5 sm:hidden">
         <div className="self-center">{titleSection}</div>
         <div className="mx-4 mb-5">{contentSection}</div>
       </div>
 
       {/* Image container */}
-      <div className="relative w-full sm:h-[550px]">
+      <div className="relative mx-auto w-full max-w-7xl sm:h-[550px]">
         {/* Image takes half width on larger screens */}
-        <div className="w-full sm:absolute sm:right-0 sm:h-full lg:w-1/2">
-          <img
-            src={selectedOption?.imageUrl || "/images/events/default.jpg"}
-            alt={selectedOption?.alt || "Evento"}
-            className="h-full w-full rounded-4xl object-cover"
-          />
-        </div>
+        <ImageContainer />
 
         {/* Desktop title (hidden on mobile) */}
         <div className="top-12 left-1/9 hidden sm:absolute sm:block">
