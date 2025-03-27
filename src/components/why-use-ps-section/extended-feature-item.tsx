@@ -12,7 +12,7 @@ export default function FeatureItem({
 }: FeatureItemProps) {
   const { selectedId, selectBackgroundUrl, selectItem } = useStore(
     (state) => state
-  ); //checkear funcionamiento
+  );
   const isSelected = selectedId === id;
 
   const handleClick = () => {
