@@ -11,7 +11,7 @@ export default function ImageGrid() {
   ];
 
   return (
-    <div className="relative -mx-4 overflow-hidden sm:-mx-6 lg:-mx-8">
+    <div className="relative -mx-4 w-screen overflow-hidden sm:-mx-6 lg:-mx-8">
       {/* First slider */}
       <ImageSlider images={tripleImages} direction="left" />
 
