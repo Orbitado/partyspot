@@ -4,7 +4,7 @@ import { partyOptions } from "@/src/data/party-options";
 
 export const PartyButtons = () => {
   return (
-    <div className="grid grid-cols-2 gap-2 sm:flex sm:flex-wrap">
+    <div className="flex flex-wrap justify-center gap-2 sm:justify-start">
       {partyOptions.map((option) => (
         <PartyOptionButton key={option.id} option={option} />
       ))}

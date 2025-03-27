@@ -16,16 +16,19 @@ export const PartyOptionButton: React.FC<PartyOptionButtonProps> = ({
   return (
     <button
       onClick={() => handlePartySelect(option.id as PartyType)}
-      className={`flex items-center gap-2 rounded-lg px-4 py-2 transition-all ${
+      className={`flex items-center gap-1.5 rounded-lg px-3 py-1.5 transition-all sm:gap-2 sm:px-4 sm:py-2 md:gap-2 md:px-4 md:py-2 lg:gap-2 lg:px-4 lg:py-2 ${
         isSelected
           ? "from-primary/80 to-primary bg-gradient-to-r text-white"
           : "text-secondary bg-white hover:bg-gray-100"
-      } text-sm font-medium shadow-sm`}
+      } text-xs font-medium shadow-sm sm:text-sm md:text-sm lg:text-sm`}
     >
-      <span className="text-lg" aria-hidden="true">
+      <span
+        className="shrink-0 text-base sm:text-lg md:text-lg lg:text-lg"
+        aria-hidden="true"
+      >
         {option.icon}
       </span>
-      {option.label}
+      <span className="truncate">{option.label}</span>
     </button>
   );
 };
