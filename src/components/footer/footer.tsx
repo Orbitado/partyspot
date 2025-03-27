@@ -4,9 +4,9 @@ import { socialLinks, footerSections } from "@/src/data/footer";
 
 export function Footer() {
   return (
-    <footer className="w-full border-t border-gray-200 bg-white py-8">
-      <div className="container mx-auto px-4">
-        {/* Bottom Footer (primero) */}
+    <footer className="border-t border-gray-200 bg-white py-8">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        {/* Footer */}
         <div className="mb-8 flex flex-col items-center justify-between space-y-6 md:flex-row md:space-y-0">
           {/* Logo and Copyright */}
           <div className="flex flex-col items-center text-center md:items-start md:text-left">
@@ -37,7 +37,7 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Main Footer Content (segundo) */}
+        {/* Main Footer Content */}
         <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-2 lg:grid-cols-4">
           {footerSections.map((section, sectionIndex) => (
             <div

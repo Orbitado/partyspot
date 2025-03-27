@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Gabarito } from "next/font/google";
 import "./globals.css";
-import { Footer } from "@/components/footer/footer";
+import { Footer } from "@/src/components/footer/footer";
 
 const gabarito = Gabarito({
   variable: "--font-gabarito",
