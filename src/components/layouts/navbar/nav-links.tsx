@@ -1,8 +1,8 @@
 "use client";
-
-import React, { useState, useCallback } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { navLinks } from "@/src/data/nav-links";
+import { useStore } from "@/src/store";
 
 interface NavLinksProps {
   isMobile?: boolean;
@@ -10,10 +10,11 @@ interface NavLinksProps {
 
 const NavLinks: React.FC<NavLinksProps> = ({ isMobile = false }) => {
   const [activeLink, setActiveLink] = useState<string>("home");
-
-  const handleLinkClick = useCallback((id: string) => {
+  const { toggleMobileMenu } = useStore();
+  const handleLinkClick = (id: string) => {
     setActiveLink(id);
-  }, []);
+    toggleMobileMenu();
+  };
 
   return (
     <div

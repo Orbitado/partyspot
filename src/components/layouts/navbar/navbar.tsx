@@ -1,24 +1,17 @@
-"use client";
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { images } from "@/src/data/images";
 import type { NavbarProps } from "@/src/types";
 import NavLinks from "./nav-links";
 import UserActions from "./user-actions";
+import MobileMenu from "./mobile-menu";
 
 const Navbar: React.FC<NavbarProps> = ({
   className = "",
   onMenuToggle,
   onProfileClick
 }) => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const handleMenuToggle = () => {
-    setIsOpen(!isOpen);
-    if (onMenuToggle) onMenuToggle();
-  };
-
   return (
     <header
       className={`fixed z-50 w-full bg-white shadow-md transition-all duration-300 ${className}`}
@@ -58,36 +51,15 @@ const Navbar: React.FC<NavbarProps> = ({
 
         {/* User Actions - Right */}
         <div className="flex items-center justify-end">
-          <div className="hidden md:block">
-            <UserActions
-              onMenuToggle={handleMenuToggle}
-              onProfileClick={onProfileClick}
-            />
-          </div>
-
-          {/* Mobile Navigation Toggle */}
-          <div className="md:hidden">
-            <UserActions
-              onMenuToggle={handleMenuToggle}
-              onProfileClick={onProfileClick}
-            />
-          </div>
+          <UserActions
+            onMenuToggle={onMenuToggle}
+            onProfileClick={onProfileClick}
+          />
         </div>
       </div>
 
       {/* Mobile Navigation Menu */}
-      <div
-        className={`overflow-hidden bg-white shadow-lg transition-all duration-300 md:hidden ${
-          isOpen
-            ? "max-h-[300px] animate-[slideDown_0.3s_ease-in-out]"
-            : "max-h-0 animate-[slideUp_0.3s_ease-in-out]"
-        }`}
-        role="menu"
-      >
-        <div className="px-4 py-3">
-          <NavLinks isMobile={true} />
-        </div>
-      </div>
+      <MobileMenu />
     </header>
   );
 };
