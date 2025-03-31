@@ -3,6 +3,7 @@ import { Gabarito } from "next/font/google";
 import "./globals.css";
 import Footer from "@/src/components/layouts/footer/footer";
 import Navbar from "@/src/components/layouts/navbar/navbar";
+import { ClerkProvider } from "@clerk/nextjs";
 
 const gabarito = Gabarito({
   variable: "--font-gabarito",
@@ -25,14 +26,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es">
-      <body
-        className={`${gabarito.className} flex min-h-screen flex-col antialiased`}
-      >
-        |<Navbar />
-        <main className="flex-grow">{children}</main>
-        <Footer />
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="es">
+        <body
+          className={`${gabarito.className} flex min-h-screen flex-col antialiased`}
+        >
+          <Navbar />
+          <main className="flex-grow">{children}</main>
+          <Footer />
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }

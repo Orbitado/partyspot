@@ -4,14 +4,14 @@ import Link from "next/link";
 import { images } from "@/src/data/images";
 import type { NavbarProps } from "@/src/types";
 import NavLinks from "./nav-links";
-import UserActions from "./user-actions";
 import MobileMenu from "./mobile-menu";
+import { SignInButton } from "@clerk/nextjs";
+import { SignUpButton } from "@clerk/nextjs";
+import { SignedOut } from "@clerk/nextjs";
+import { UserButton } from "@clerk/nextjs";
+import { SignedIn } from "@clerk/nextjs";
 
-const Navbar: React.FC<NavbarProps> = ({
-  className = "",
-  onMenuToggle,
-  onProfileClick
-}) => {
+const Navbar: React.FC<NavbarProps> = ({ className = "" }) => {
   return (
     <header
       className={`fixed z-50 w-full bg-white shadow-md transition-all duration-300 ${className}`}
@@ -51,10 +51,13 @@ const Navbar: React.FC<NavbarProps> = ({
 
         {/* User Actions - Right */}
         <div className="flex items-center justify-end">
-          <UserActions
-            onMenuToggle={onMenuToggle}
-            onProfileClick={onProfileClick}
-          />
+          <SignedOut>
+            <SignInButton />
+            <SignUpButton />
+          </SignedOut>
+          <SignedIn>
+            <UserButton />
+          </SignedIn>
         </div>
       </div>
 
