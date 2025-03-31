@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { Gabarito } from "next/font/google";
 import "./globals.css";
-import Footer from "@/src/components/layouts/footer/footer";
-import Navbar from "@/src/components/layouts/navbar/navbar";
 import { ClerkProvider } from "@clerk/nextjs";
 
 const gabarito = Gabarito({
@@ -26,14 +24,25 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
+    <ClerkProvider
+      appearance={{
+        layout: {
+          socialButtonsPlacement: "bottom",
+          socialButtonsVariant: "iconButton",
+          logoPlacement: "inside"
+        },
+        elements: {
+          formButtonPrimary: "bg-[#E6267B] hover:bg-[#E6267B]/90",
+          footerActionLink: "text-[#E6267B] hover:text-[#E6267B]/90",
+          card: "rounded-lg shadow-md border-0"
+        }
+      }}
+    >
       <html lang="es">
         <body
           className={`${gabarito.className} flex min-h-screen flex-col antialiased`}
         >
-          <Navbar />
           <main className="flex-grow">{children}</main>
-          <Footer />
         </body>
       </html>
     </ClerkProvider>
