@@ -41,6 +41,23 @@ PartySpot is a modern digital platform developed with Next.js 15 designed to con
    - Interface for providers to manage their offerings and availability
    - Platform management tools for the PartySpot team
 
+8. **Authentication System**
+   - User registration and login with secure authentication
+   - Password recovery functionality
+   - Protected routes and session management
+
+## Application Structure
+
+The application follows Next.js 15 App Router structure with route groups:
+
+- **Public Routes** (`app/(public)/`):
+  - Sign-in page
+  - Sign-up page
+  - Forgot password functionality
+  
+- **Private Routes** (`app/(private)/`):
+  - Protected pages
+
 ## Tech Stack
 
 - **Frontend**:
@@ -97,6 +114,19 @@ PartySpot is a modern digital platform developed with Next.js 15 designed to con
    ```
 
    Then edit the `.env.local` file with your specific configurations.
+
+### Environment Variables
+
+The application uses the following environment variables in `.env.local`:
+
+- `DATABASE_URL`: Connection string for the PostgreSQL database
+- `NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY`: Public key for Clerk authentication
+- `CLERK_SECRET_KEY`: Secret key for Clerk authentication (keep this private)
+- `NEXT_PUBLIC_CLERK_SIGN_IN_URL`: URL path for the sign-in page
+- `NEXT_PUBLIC_CLERK_SIGN_IN_FALLBACK_REDIRECT_URL`: Redirect URL after successful sign-in
+- `NEXT_PUBLIC_CLERK_SIGN_UP_FALLBACK_REDIRECT_URL`: Redirect URL after successful sign-up
+
+Variables prefixed with `NEXT_PUBLIC_` are accessible in the browser, while others are only available on the server side. Never expose sensitive keys like `CLERK_SECRET_KEY` to the client.
 
 ### Database Setup with Docker
 
