@@ -16,7 +16,7 @@ function PartySpotLogoWithText({
         alt="PartySpot"
         width={180}
         height={60}
-        className={`size-${logoSize}`}
+        className={`${logoSize ? `size-${logoSize}` : "size-24"}`}
         priority
       />
       <Image
@@ -24,7 +24,7 @@ function PartySpotLogoWithText({
         alt="PartySpot"
         width={180}
         height={60}
-        className={`size-${textSize}`}
+        className={`${textSize ? `size-${textSize}` : "size-12"}`}
         priority
       />
     </div>
